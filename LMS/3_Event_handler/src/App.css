@@ -1,0 +1,12 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.btn {
+  border-color: #53a5fc;
+  box-shadow: 0 0 20px rgba(83, 165, 252, 0.5);
+  padding: 1rem 3rem;
+}

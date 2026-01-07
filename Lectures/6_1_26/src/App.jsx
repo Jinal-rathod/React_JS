@@ -12,7 +12,7 @@ function App() {
   return (
     <>
      <h1>Quize Game</h1>
-     <button onClick={}>Click</button>
+     <button onClick={option}>Click</button>
     </>
   )
 }
