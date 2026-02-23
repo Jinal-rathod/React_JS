@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <>
       {/* Top Bar */}
-      <div className="bg-[#0088cc] text-white text-sm">
+      <div className="bg-[#0088cc] text-white text-sm ">
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
