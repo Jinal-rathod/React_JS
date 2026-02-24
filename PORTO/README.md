@@ -1,3 +1,12 @@
+# https://m2.portotheme.com/demo1_en/
+
+Home,
+Categories -> Left Sidebar,
+Pages -> Aboutus, Contactus, shopping cart, checkout page,
+Blog,
+Ragistration page,
+My Account page.
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

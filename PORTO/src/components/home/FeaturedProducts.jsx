@@ -1,5 +1,5 @@
-import ProductGridCard from "./ProductGridCard";
-import products from "../data/products";
+import ProductGridCard from "../ProductGridCard";
+import products from "../../data/products";
 
 const FeaturedProducts = () => {
   return (
@@ -16,7 +16,9 @@ const FeaturedProducts = () => {
           >
             <img src={product.image} alt="" className="pb-4" />
             <h3 className="text-gray-700">{product.name}</h3>
-            <p className="text-blue-600 font-semibold mt-2">{product.price}</p>
+            <p className="text-gray-800 font-bold text-lg mt-2">
+              {product.price}
+            </p>
           </div>
         ))}
       </div>

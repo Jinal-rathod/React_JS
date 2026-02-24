@@ -1,12 +1,10 @@
 const ProductSmallCard = ({ product }) => {
   return (
     <div className="flex gap-3 items-center">
-      <img src={product.image} className="w-16 h-16 object-cover" />
+      <img src={product.image} className="w-20 h-20 object-cover" />
       <div>
-        <h4 className="text-sm">{product.name}</h4>
-        <p className="text-blue-600 font-semibold text-sm">
-          {product.price}
-        </p>
+        <h4 className="text-sm font-semibold">{product.name}</h4>
+        <p className="text-gray-800 font-semibold text-lg">{product.price}</p>
       </div>
     </div>
   );

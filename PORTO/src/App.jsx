@@ -1,12 +1,17 @@
 import "./App.css";
 import Home from "./pages/Home.jsx";
+import Login from "./pages/Login.jsx";
+import Blog from "./pages/Blog.jsx";
+import About from "./pages/About.jsx";
 
 function App() {
   return (
     <>
-      <div >
-        <Home />
-        {/* <BrandLogos/> */}
+      <div>
+        {/* <Home /> */}
+        {/* <Login/> */}
+        {/* <Blog /> */}
+        <About/>
       </div>
     </>
   );
@@ -15,31 +20,43 @@ function App() {
 export default App;
 
 // import "./App.css";
+// import React from "react";
 
-// import SidebarLeft from "./components/SidebarLeft";
-// import FeaturedProducts from "./components/FeaturedProducts";
-// import BrandLogos from "./components/BrandLogos";
-// import ProductColumns from "./components/ProductColumns";
-// import Services from "./components/Services";
-// import Footer from "./components/Footer";
-
-// function App() {
+// export default function About() {
 //   return (
-//     <div className="bg-gray-100">
-//       <div className="max-w-7xl mx-auto flex gap-6 py-10">
-//         <SidebarLeft />
-
-//         <div className="flex-1 space-y-10">
-//           <FeaturedProducts />
-//           <BrandLogos />
-//           <ProductColumns />
-//           <Services />
+//     <div className="font-sans text-gray-800">
+//       {/* Navbar */}
+//       <div className="border-b">
+//         <div className="max-w-7xl mx-auto flex gap-8 px-4 py-3 text-sm font-medium">
+//           <span>HOME</span>
+//           <span>CATEGORIES</span>
+//           <span>PRODUCTS</span>
+//           <span>PAGES</span>
+//           <span>FEATURES</span>
+//           <span>BLOG</span>
+//           <span>ABOUT US</span>
 //         </div>
 //       </div>
 
-//       <Footer />
+//       {/* Breadcrumb */}
+//       <div className="bg-gray-100 text-sm">
+//         <div className="max-w-7xl mx-auto px-4 py-3">
+//           Home &gt; Porto &gt; About Us
+//         </div>
+//       </div>
+
+//       {/* About Hero Section */}
+      
+
+      
+
+//       {/* Get in Touch Button */}
+//       <div className="text-center py-10">
+//         <button className="bg-sky-600 text-white px-8 py-3 rounded hover:bg-sky-700 transition">
+//           Get In Touch
+//         </button>
+//       </div>
 //     </div>
 //   );
 // }
 
-// export default App;

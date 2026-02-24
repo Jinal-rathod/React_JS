@@ -2,12 +2,12 @@ const SidebarLeft = () => {
   return (
     <div className="w-72 space-y-6">
       {/* SALE BOX */}
-      <div className="border flex flex-col justify-center items-center text-center pt-10">
+      <div className="border flex flex-col justify-center items-center text-center py-5">
         <img
           src="https://m2.portotheme.com/media/wysiwyg/smartwave/porto/homepage/01/shop1_off.png"
           alt=""
         />
-        <h3 className="text-8xl flex items-center font-bold mt-5">
+        <h3 className="text-8xl flex items-center font-bold my-3">
           <small className="text-sm flex flex-col">UP TO</small>
           50
           <div className="text-5xl text-left">
@@ -74,11 +74,8 @@ const SidebarLeft = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non
           placerat mi. Etiam non...
         </p>
-        <a
-          href="#"
-          className=""
-        >
-          read More >
+        <a href="#" className="text-sm font-semibold">
+          read more &gt;
         </a>
       </div>
     </div>

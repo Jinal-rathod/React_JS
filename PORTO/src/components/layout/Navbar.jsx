@@ -1,4 +1,4 @@
-import logo from "../assets/logo_ecomblue_lg.png";
+import logo from "../../assets/logo_ecomblue_lg.png";
 
 const Navbar = () => {
   return (
@@ -45,7 +45,7 @@ const Navbar = () => {
       </div>
 
       {/* Main Navbar */}
-      <nav className="bg-white shadow">
+      <nav className="bg-white">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
           {/* Logo */}
           <div>

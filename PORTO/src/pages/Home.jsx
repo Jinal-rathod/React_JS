@@ -1,16 +1,17 @@
 import React from "react";
-import Navbar from "../components/Navbar.jsx";
-import Footer from "../components/Footer.jsx";
-import Header from "../components/Header.jsx";
-import SidebarLeft from "../components/SidebarLeft";
-import FeaturedProducts from "../components/FeaturedProducts.jsx";
-import BrandLogos from "../components/BrandLogos.jsx";
-import ProductColumns from "../components/ProductColumns.jsx";
-import Services from "../components/Services.jsx";
+import Navbar from "../components/layout/Navbar.jsx";
+import Footer from "../components/layout/Footer.jsx";
+import Header from "../components/home/Header.jsx";
+import SidebarLeft from "../components/home/SidebarLeft.jsx";
+import FeaturedProducts from "../components/home/FeaturedProducts.jsx";
+import BrandLogos from "../components/home/BrandLogos.jsx";
+import ProductColumns from "../components/home/ProductColumns.jsx";
+import Services from "../components/home/Services.jsx";
 
 const Home = () => {
   return (
     <div className="font-sans bg-white">
+      <Navbar />
       <Header />
 
       <div className="max-w-6xl mx-auto flex gap-6 pt-10">

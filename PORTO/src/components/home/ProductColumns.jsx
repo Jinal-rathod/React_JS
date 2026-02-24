@@ -1,5 +1,5 @@
-import products from "../data/products";
-import ProductSmallCard from "./ProductSmallCard";
+import products from "../../data/products";
+import ProductSmallCard from "../ProductSmallCard";
 
 const ProductColumns = () => {
   return (
