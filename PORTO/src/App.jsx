@@ -5,17 +5,21 @@ import Blog from "./pages/Blog.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 import Cart from "./pages/Cart.jsx";
+import Checkout from "./pages/Checkout.jsx";
+import Register from "./pages/Register.jsx";
 
 function App() {
   return (
     <>
       <div>
-        {/* <Home /> */}
+        <Home />
         {/* <Login/> */}
         {/* <Blog /> */}
         {/* <About/> */}
         {/* <Contact /> */}
-        <Cart/>
+        {/* <Cart/> */}
+        {/* <Checkout /> */}
+        {/* <Register/> */}
       </div>
     </>
   );
