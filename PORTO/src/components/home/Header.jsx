@@ -1,4 +1,5 @@
 import React from "react";
+import { Outlet, Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -54,29 +55,32 @@ const Header = () => {
         <aside className="w-1/4 bg-white border border-gray-300">
           <h2 className="font-bold bg-gray-200 p-4 py-3">BROWSE CATEGORIES</h2>
           <ul className="text-gray-600 px-4 py-2">
-            <li className="hover:text-blue-600 cursor-pointer border-b border-gray-200 py-3">
-              Home
+            <li className="hover:text-blue-600 cursor-pointer border-b border-gray-200 py-2">
+              <Link to={`/`}>Home</Link>
             </li>
-            <li className="hover:text-blue-600 cursor-pointer border-b border-gray-200 py-3">
-              Categories
+            <li className="hover:text-blue-600 cursor-pointer border-b border-gray-200 py-2">
+              <Link to={`/categories`}>Categories</Link>
             </li>
-            <li className="hover:text-blue-600 cursor-pointer border-b border-gray-200 py-3">
-              Products
+            <li className="hover:text-blue-600 cursor-pointer border-b border-gray-200 py-2">
+              <Link to={`/cart`}>Shopping Cart</Link>
             </li>
-            <li className="hover:text-blue-600 cursor-pointer border-b border-gray-200 py-3">
-              Pages
+            <li className="hover:text-blue-600 cursor-pointer border-b border-gray-200 py-2">
+              <Link to={`/checkout`}>Checkout</Link>
             </li>
-            <li className="hover:text-blue-600 cursor-pointer border-b border-gray-200 py-3">
-              Features
+            <li className="hover:text-blue-600 cursor-pointer border-b border-gray-200 py-2">
+              <Link to={`/blog`}>Blog</Link>
             </li>
-            <li className="hover:text-blue-600 cursor-pointer border-b border-gray-200 py-3">
-              Blog
+            <li className="hover:text-blue-600 cursor-pointer border-b border-gray-200 py-2">
+              <Link to={`/about`}>About Us</Link>
             </li>
-            <li className="hover:text-blue-600 cursor-pointer border-b border-gray-200 py-3">
-              About Us
+            <li className="hover:text-blue-600 cursor-pointer border-b border-gray-200 py-2">
+              <Link to={`/contact`}>Contact Us</Link>
             </li>
-            <li className="hover:text-blue-600 cursor-pointer py-3">
-              Buy Porto!
+            <li className="hover:text-blue-600 cursor-pointer border-b border-gray-200 py-2">
+              <Link to={`/login`}>My Account</Link>
+            </li>
+            <li className="hover:text-blue-600 cursor-pointer py-2">
+              <Link to={`/register`}>Register</Link>
             </li>
           </ul>
         </aside>
