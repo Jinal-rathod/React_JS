@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import TopNavbar from "../TopNavbar";
 
 export default function Cart() {
   const [cartItems, setCartItems] = useState([
@@ -48,35 +49,7 @@ export default function Cart() {
 
   return (
     <div className="font-sans text-gray-800">
-      {/* Top Navbar */}
-      <div className=" bg-gray-100 text-center ">
-        <div className=" max-w-6xl mx-auto py-5 flex text-sm font-medium text-gray-600 space-x-6">
-          <a href="#" className="hover:text-black">
-            HOME
-          </a>
-          <a href="#" className="hover:text-black">
-            CATEGORIES
-          </a>
-          <a href="#" className="hover:text-black">
-            PRODUCTS
-          </a>
-          <a href="#" className="hover:text-black">
-            PAGES
-          </a>
-          <a href="#" className="hover:text-black">
-            FEATURES
-          </a>
-          <a href="#" className="hover:text-black">
-            BLOG
-          </a>
-          <a href="#" className="hover:text-black">
-            ABOUT US
-          </a>
-          <a href="#" className="hover:text-black">
-            BUY PORTO!
-          </a>
-        </div>
-      </div>
+      <TopNavbar />
       {/* Page Content */}
       <section className="max-w-6xl mx-auto px-4 py-12">
         <h2 className="text-3xl font-bold text-sky-600 mb-10">Shopping Cart</h2>

@@ -67,20 +67,20 @@ const Navbar = () => {
           </div>
 
           {/* Right Icons */}
-          <div className="flex items-center space-x-6">
-            <div className="flex items-center space-x-5">
-              <i className="fa-solid fa-phone text-[#0088cc] text-lg"></i>
+          <div className="flex items-center space-x-5">
+            <div className="flex items-center space-x-3">
+              <i class="fa-solid fa-phone text-2xl"></i>
               <div>
                 <p className="text-xs text-gray-500">CALL US NOW</p>
                 <p className="font-bold text-sm">+123 5678 890</p>
               </div>
             </div>
 
-            <i className="fa-regular fa-user text-xl cursor-pointer"></i>
-            <i className="fa-regular fa-heart text-xl cursor-pointer"></i>
+            <i class="fa-solid fa-user text-2xl"></i>
+            <i class="fa-solid fa-heart text-2xl"></i>
 
             <div className="relative">
-              <i className="fa-solid fa-cart-shopping text-xl cursor-pointer"></i>
+              <i class="fa-solid fa-bag-shopping text-2xl"></i>
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
                 0
               </span>

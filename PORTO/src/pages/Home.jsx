@@ -4,13 +4,11 @@ import FeaturedProducts from "../components/home/FeaturedProducts.jsx";
 import BrandLogos from "../components/home/BrandLogos.jsx";
 import ProductColumns from "../components/home/ProductColumns.jsx";
 import Services from "../components/home/Services.jsx";
-// import NewsletterModal from "../components/NewsletterModal.jsx";
 
 const Home = () => {
   return (
     <>
       <div className="">
-        {/* <div onClick={() => setOpen(true)}></div> */}
         <div className="font-sans bg-white">
           <Header />
 
@@ -24,7 +22,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-        {/* {open && <NewsletterModal />} */}
       </div>
     </>
   );
