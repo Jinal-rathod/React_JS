@@ -13,7 +13,7 @@ const Header = () => {
     <div className="font-sans bg-white">
       <div className="py-2 px-4 mt-5">
         <div className="max-w-6xl mx-auto ">
-          <div className="flex justify-between items-center">
+          <div className="flex flex-wrap lg:flex-nowrap justify-between items-center">
             <div className="border border-gray-200 w-full">
               <div className="flex p-4 items-center gap-4">
                 <i class="fa-solid fa-truck text-2xl"></i>
@@ -27,7 +27,7 @@ const Header = () => {
             </div>
             <div className="border border-gray-200 w-full">
               <div className="flex p-4 items-center gap-4">
-                <i class="fa-solid fa-dollar-sign text-2xl"></i>
+                <i class="fa-solid fa-dollar-sign  text-2xl"></i>
                 <div>
                   <p className="font-bold text-md">MONEY BACK GUARANTEE</p>
                   <p className="text-sm text-gray-500">
@@ -87,7 +87,7 @@ const Header = () => {
         </aside>
 
         {/* Hero Section */}
-        <section className="w-3/4 header_img">
+        <section className=" header_img">
           <div className="p-10 text-white flex flex-col justify-center h-full">
             <h4 className="text-gray-300 text-lg">
               Find the Boundaries. Push Through!

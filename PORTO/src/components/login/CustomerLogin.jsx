@@ -48,7 +48,7 @@ const CustomerLogin = () => {
 
           {/* Buttons */}
           <button className="w-full bg-gradient-to-r from-gray-800 to-black text-white py-4 font-semibold mb-4 hover:opacity-90 transition">
-            SIGN IN
+            <Link to={`/`}>SIGN IN</Link>
           </button>
 
           <button className="w-full bg-gradient-to-r from-gray-800 to-black text-white py-4 font-semibold hover:opacity-90 transition">

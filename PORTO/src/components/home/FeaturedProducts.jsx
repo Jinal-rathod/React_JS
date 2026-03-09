@@ -4,12 +4,6 @@ import products from "../../data/products";
 const FeaturedProducts = () => {
   return (
     <>
-      {/* content */}
-      <div className="flex justify-between">
-        <img src="https://m2.portotheme.com/media/wysiwyg/smartwave/porto/homepage/01/shop1_home_ads1.jpg" className="object-cover" alt="" />
-        <img src="https://m2.portotheme.com/media/wysiwyg/smartwave/porto/homepage/01/shop1_home_ads2.jpg" className="object-cover" alt="" />
-        <img src="https://m2.portotheme.com/media/wysiwyg/smartwave/porto/homepage/01/shop1_home_ads3.jpg" className="object-cover" alt="" />
-      </div>
 
       {/* Featured Products */}
 

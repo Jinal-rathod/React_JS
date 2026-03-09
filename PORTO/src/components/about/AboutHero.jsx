@@ -4,18 +4,27 @@ import TopNavbar from "../TopNavbar";
 const AboutHero = () => {
   return (
     <div>
-      <div className=" bg-gray-100 text-center ">
+      {/* Top Navbar */}
+      <div className="bg-gray-100 text-center">
         <TopNavbar />
       </div>
 
       {/* About Hero Section */}
-      <section className="max-w-6xl mx-auto px-4 py-14">
-        <h1 className="text-3xl font-bold uppercase mb-6">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+
+        {/* Title */}
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase mb-4 text-center md:text-left">
           The New Way To Success
         </h1>
 
-        <h3 className="text-xl mb-8 mt-12">Who we are </h3>
-        <div className="text-sm grid md:grid-cols-2 gap-10 text-gray-600 leading-relaxed">
+        {/* Subtitle */}
+        <h3 className="text-lg sm:text-xl mb-6 sm:mb-10 mt-6 sm:mt-10 text-center md:text-left">
+          Who we are
+        </h3>
+
+        {/* Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10 text-gray-600 text-sm sm:text-base leading-relaxed">
+
           <p>
             Aliquam consectetur et lorem semper scelerisque. Proin est nibh,
             vestibulum vitae congue nec, tristique eu justo. Maecenas eu nunc
@@ -64,7 +73,9 @@ const AboutHero = () => {
             sit amet, sagittis feugiat dui. Proin non pellentesque leo.
             Vestibulum varius laoreet posuere. Etiam fringilla diam odio.
           </p>
+
         </div>
+
       </section>
     </div>
   );
