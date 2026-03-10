@@ -12,7 +12,7 @@ const Navbar = () => {
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         />
-        <div className="max-w-6xl mx-auto px-4 py-2 flex justify-between items-center">
+        <div className="max-w-6xl mx-auto px-4 py-2 flex md:flex-row justify-between items-center">
           {/* Left */}
           <div className="flex items-center space-x-4">
             <span className="cursor-pointer">USD ▼</span>
@@ -21,25 +21,29 @@ const Navbar = () => {
 
           {/* Right */}
           <div className="flex items-center space-x-4">
-            <a href="#" className="hover:underline">
-              WELCOME
-            </a>
-            <a href="#" className="hover:underline">
-              BLOG
-            </a>
-            <a href="#" className="hover:underline">
-              SIGN IN
-            </a>
-            <a href="#" className="hover:underline">
-              CONTACT US
-            </a>
-            <a href="#" className="hover:underline">
-              CREATE AN ACCOUNT
-            </a>
+            <div className="lg:flex hidden space-x-4">
+              <a href="#" className="hover:underline">
+                WELCOME
+              </a>
+              <a href="#" className="hover:underline">
+                BLOG
+              </a>
+              <a href="#" className="hover:underline">
+                SIGN IN
+              </a>
+              <a href="#" className="hover:underline">
+                CONTACT US
+              </a>
+              <a href="#" className="hover:underline">
+                CREATE AN ACCOUNT
+              </a>
+            </div>
 
-            <i className="fa-brands fa-facebook cursor-pointer"></i>
-            <i className="fa-brands fa-twitter cursor-pointer"></i>
-            <i className="fa-brands fa-instagram cursor-pointer"></i>
+            <div className="space-x-4">
+              <i className="fa-brands fa-facebook cursor-pointer"></i>
+              <i className="fa-brands fa-twitter cursor-pointer"></i>
+              <i className="fa-brands fa-instagram cursor-pointer"></i>
+            </div>
           </div>
         </div>
       </div>

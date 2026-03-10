@@ -19,7 +19,7 @@ const Services = () => {
 
   return (
     <div className="border-t border-gray-300 py-10">
-      <div className="grid grid-cols-3 gap-3 text-center">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center">
         {services.map((s, i) => (
           <div key={i} className="bg-white px-2 py-6">
             <div className="w-20 h-16 mx-auto border-2 border-blue-500 rounded-full flex items-center justify-center text-blue-500 text-xl">

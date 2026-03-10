@@ -3,7 +3,7 @@ import ProductSmallCard from "../ProductSmallCard";
 
 const ProductColumns = () => {
   return (
-    <div className="grid grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
       <div>
         <h3 className="font-bold mb-4">TOP RATED PRODUCTS</h3>
         <div className="space-y-4">

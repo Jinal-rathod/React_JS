@@ -53,7 +53,7 @@ const Header = () => {
 
       <div className="max-w-6xl mx-auto flex mt-6 gap-6">
         {/* Sidebar */}
-        <aside className="w-1/4 bg-white border border-gray-300">
+        <aside className="lg:block hidden w-1/4 bg-white border border-gray-300">
           <h2 className="font-bold bg-gray-200 p-4 py-3">BROWSE CATEGORIES</h2>
           <ul className="text-gray-600 px-4 py-2">
             <li className="hover:text-blue-600 cursor-pointer border-b border-gray-200 py-2">

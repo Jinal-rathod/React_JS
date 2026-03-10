@@ -9,7 +9,7 @@ const FeaturedProducts = () => {
 
       <h2 className="text-lg font-bold mb-6">FEATURED PRODUCTS</h2>
 
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         {products.map((product, index) => (
           <div key={index} className="bg-white pb-4 rounded-lg transition">
             <img src={product.image} alt="" className="pb-4" />

@@ -12,14 +12,14 @@ const Home = () => {
         <div className="font-sans bg-white">
           <Header />
 
-          <div className="max-w-6xl mx-auto flex gap-6 pt-10">
-            <SidebarLeft />
+          <div className="max-w-6xl mx-auto lg:flex lg:flex-row-reverse lg:flex-wrap gap-6 pt-10">
             <div className="flex-1 space-y-10">
               <FeaturedProducts />
               <BrandLogos />
               <ProductColumns />
               <Services />
             </div>
+            <SidebarLeft />
           </div>
         </div>
       </div>
