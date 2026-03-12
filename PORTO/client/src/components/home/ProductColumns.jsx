@@ -1,7 +1,19 @@
-import products from "../../data/products";
 import ProductSmallCard from "../ProductSmallCard";
+import { useEffect, useState } from "react"
+import axios from "axios"
 
 const ProductColumns = () => {
+   const [products, setProducts] = useState([])
+  
+    useEffect(() => {
+      axios.get("http://localhost:3000/products")
+        .then(res => {
+          setProducts(res.data)
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }, [])
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
       <div>

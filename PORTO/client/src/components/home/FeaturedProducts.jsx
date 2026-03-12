@@ -1,7 +1,21 @@
 import ProductGridCard from "../ProductGridCard";
-import products from "../../data/products";
+import { useEffect, useState } from "react"
+import axios from "axios"
 
 const FeaturedProducts = () => {
+
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    axios.get("http://localhost:3000/products")
+      .then(res => {
+        setProducts(res.data)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }, [])
+
   return (
     <>
 
