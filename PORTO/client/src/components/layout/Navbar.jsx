@@ -1,3 +1,4 @@
+import { Outlet, Link } from "react-router-dom";
 import logo from "../../assets/logo_ecomblue_lg.png";
 
 const Navbar = () => {
@@ -92,12 +93,12 @@ const Navbar = () => {
             <i class="fa-solid fa-user text-2xl"></i>
             <i class="fa-solid fa-heart text-2xl"></i>
 
-            <div className="relative">
+            <Link to={`/wishlist`} className="relative">
               <i class="fa-solid fa-bag-shopping text-2xl"></i>
-              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+              {/* <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
                 0
-              </span>
-            </div>
+              </span> */}
+            </Link>
           </div>
         </div>
       </nav>

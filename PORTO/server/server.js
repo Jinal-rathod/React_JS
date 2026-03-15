@@ -1,7 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-require("dotenv").config();
+const dotenv = require("dotenv");
+
+dotenv.config({
+  path: "./.env",
+});
 
 const productRoutes = require("./routes/productRoutes");
 const categoryRoutes = require("./routes/categoryRoutes");
@@ -15,12 +19,14 @@ app.use(express.json());
 app.use("/api/products", productRoutes);
 app.use("/api/categories", categoryRoutes);
 
-// DB connection
+// DB connectionw
 mongoose
-  .connect("mongodb+srv://jinalrathod594_db_user:<db_password>@cluster1.dei5gdk.mongodb.net/?appName=Cluster1")
+  .connect(
+    "mongodb+srv://jinalrathod594_db_user:jinal_594@cluster1.dei5gdk.mongodb.net/?appName=Cluster1",
+  )
   .then(() => console.log("MongoDB Connected"))
-  .catch((err) => console.log(err));
+  .catch((err) => console.log("MongoDB Connection Failed", err));
 
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
+app.listen(4000, () => {
+  console.log("Server running on port 4000");
 });
