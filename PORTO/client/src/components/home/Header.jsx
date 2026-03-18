@@ -16,7 +16,7 @@ const Header = () => {
           <div className="flex flex-wrap lg:flex-nowrap justify-between items-center">
             <div className="border border-gray-200 w-full">
               <div className="flex p-4 items-center gap-4">
-                <i class="fa-solid fa-truck text-2xl"></i>
+                <i className="fa-solid fa-truck text-2xl"></i>
                 <div>
                   <p className="font-bold text-md">FREE SHIPPING & RETURN</p>
                   <p className="text-sm text-gray-500">
@@ -27,7 +27,7 @@ const Header = () => {
             </div>
             <div className="border border-gray-200 w-full">
               <div className="flex p-4 items-center gap-4">
-                <i class="fa-solid fa-dollar-sign  text-2xl"></i>
+                <i className="fa-solid fa-dollar-sign  text-2xl"></i>
                 <div>
                   <p className="font-bold text-md">MONEY BACK GUARANTEE</p>
                   <p className="text-sm text-gray-500">
@@ -38,7 +38,7 @@ const Header = () => {
             </div>
             <div className="border border-gray-200 w-full">
               <div className="flex p-4 items-center gap-4">
-                <i class="fa-solid fa-hourglass text-2xl"></i>
+                <i className="fa-solid fa-hourglass text-2xl"></i>
                 <div>
                   <p className="font-bold text-md">ONLINE SUPPORT 24/7</p>
                   <p className="text-sm text-gray-500">
@@ -57,31 +57,31 @@ const Header = () => {
           <h2 className="font-bold bg-gray-200 p-4 py-3">BROWSE CATEGORIES</h2>
           <ul className="text-gray-600 px-4 py-2">
             <li className="hover:text-blue-600 cursor-pointer border-b border-gray-200 py-2">
-              <Link to={`/`}><i class="fa-solid fa-house me-2"></i>Home</Link>
+              <Link to={`/`}><i className="fa-solid fa-house me-2"></i>Home</Link>
             </li>
             <li className="hover:text-blue-600 cursor-pointer border-b border-gray-200 py-2">
-              <Link to={`/categories`}><i class="fa-solid fa-award me-2"></i>Categories</Link>
+              <Link to={`/categories`}><i className="fa-solid fa-award me-2"></i>Categories</Link>
             </li>
             <li className="hover:text-blue-600 cursor-pointer border-b border-gray-200 py-2">
-              <Link to={`/cart`}><i class="fa-solid fa-cart-shopping me-2"></i>Shopping Cart</Link>
+              <Link to={`/cart`}><i className="fa-solid fa-cart-shopping me-2"></i>Shopping Cart</Link>
             </li>
             <li className="hover:text-blue-600 cursor-pointer border-b border-gray-200 py-2">
-              <Link to={`/checkout`}><i class="fa-solid fa-cash-register me-2"></i>Checkout</Link>
+              <Link to={`/checkout`}><i className="fa-solid fa-cash-register me-2"></i>Checkout</Link>
             </li>
             <li className="hover:text-blue-600 cursor-pointer border-b border-gray-200 py-2">
-              <Link to={`/blog`}><i class="fa-solid fa-layer-group me-2"></i>Blog</Link>
+              <Link to={`/blog`}><i className="fa-solid fa-layer-group me-2"></i>Blog</Link>
             </li>
             <li className="hover:text-blue-600 cursor-pointer border-b border-gray-200 py-2">
-              <Link to={`/about`}><i class="fa-solid fa-user-group me-2"></i>About Us</Link>
+              <Link to={`/about`}><i className="fa-solid fa-user-group me-2"></i>About Us</Link>
             </li>
             <li className="hover:text-blue-600 cursor-pointer border-b border-gray-200 py-2">
-              <Link to={`/contact`}><i class="fa-solid fa-address-book me-2"></i>Contact Us</Link>
+              <Link to={`/contact`}><i className="fa-solid fa-address-book me-2"></i>Contact Us</Link>
             </li>
             <li className="hover:text-blue-600 cursor-pointer border-b border-gray-200 py-2">
-              <Link to={`/login`}><i class="fa-solid fa-circle-user me-2"></i>My Account</Link>
+              <Link to={`/login`}><i className="fa-solid fa-circle-user me-2"></i>My Account</Link>
             </li>
             <li className="hover:text-blue-600 cursor-pointer py-2">
-              <Link to={`/register`}><i class="fa-solid fa-user-plus me-2"></i>Register</Link>
+              <Link to={`/register`}><i className="fa-solid fa-user-plus me-2"></i>Register</Link>
             </li>
           </ul>
         </aside>

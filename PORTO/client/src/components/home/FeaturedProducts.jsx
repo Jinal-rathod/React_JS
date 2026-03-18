@@ -1,5 +1,6 @@
 import ProductGridCard from "../ProductGridCard";
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
+import { WishlistContext } from "../wishlist/WishlistContext";
 import axios from "axios"
 
 const FeaturedProducts = () => {
@@ -16,6 +17,8 @@ const FeaturedProducts = () => {
       })
   }, [])
 
+  const { toggleWishlist, isInWishlist } = useContext(WishlistContext);
+
   return (
     <>
 
@@ -29,14 +32,20 @@ const FeaturedProducts = () => {
             <img src={product.image} alt="" className="pb-4" />
             <h3 className="text-gray-700 flex justify-between">
               {product.name}
-              <i class="fa-regular fa-heart"></i>
+              <i
+                className={`cursor-pointer text-lg ${isInWishlist(product.id)
+                  ? "fa-solid text-red-500"
+                  : "fa-regular"
+                  } fa-heart`}
+                onClick={() => toggleWishlist(product)}
+              ></i>
             </h3>
             <div className="text-gray-300 text-[10px]">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
+              <i className="fa-solid fa-star"></i>
+              <i className="fa-solid fa-star"></i>
+              <i className="fa-solid fa-star"></i>
+              <i className="fa-solid fa-star"></i>
+              <i className="fa-solid fa-star"></i>
             </div>
             <p className="text-gray-800 font-bold text-lg">{product.price}</p>
           </div>

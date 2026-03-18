@@ -107,9 +107,9 @@ const Footer = () => {
           <p>© Porto Magento 2023. All Rights Reserved</p>
 
           <div className="flex space-x-4 mt-4 md:mt-0 text-5xl ">
-            <i class="fa-brands fa-cc-visa "></i>
-            <i class="fa-brands fa-cc-paypal"></i>
-            <i class="fa-brands fa-cc-stripe"></i>
+            <i className="fa-brands fa-cc-visa "></i>
+            <i className="fa-brands fa-cc-paypal"></i>
+            <i className="fa-brands fa-cc-stripe"></i>
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Verisign_logo.svg"
               alt="verisign"

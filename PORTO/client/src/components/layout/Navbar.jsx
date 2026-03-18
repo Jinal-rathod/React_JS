@@ -1,7 +1,13 @@
-import { Outlet, Link } from "react-router-dom";
 import logo from "../../assets/logo_ecomblue_lg.png";
+import { useContext } from "react";
+import { WishlistContext } from "../../components/wishlist/WishlistContext.jsx";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+
+  const { wishlist } = useContext(WishlistContext);
+  const navigate = useNavigate();
+
   return (
     <>
       {/* Top Bar */}
@@ -23,19 +29,19 @@ const Navbar = () => {
           {/* Right */}
           <div className="flex items-center space-x-4">
             <div className="lg:flex hidden space-x-4">
-              <a href="#" className="hover:underline">
+              <a href="" className="hover:underline">
                 WELCOME
               </a>
-              <a href="#" className="hover:underline">
+              <a href="" className="hover:underline">
                 BLOG
               </a>
-              <a href="#" className="hover:underline">
+              <a href="" className="hover:underline">
                 SIGN IN
               </a>
-              <a href="#" className="hover:underline">
+              <a href="" className="hover:underline">
                 CONTACT US
               </a>
-              <a href="#" className="hover:underline">
+              <a href="" className="hover:underline">
                 CREATE AN ACCOUNT
               </a>
             </div>
@@ -54,7 +60,7 @@ const Navbar = () => {
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
 
           {/* Mobile Menu */}
-          <div className="md:hidden flex"><i class=""></i></div>
+          <div className="md:hidden flex"></div>
 
           {/* Logo */}
           <div>
@@ -83,22 +89,22 @@ const Navbar = () => {
           {/* Right Icons */}
           <div className="flex items-center space-x-5">
             <div className="lg:flex hidden items-center space-x-3 ">
-              <i class="fa-solid fa-phone text-2xl"></i>
+              <i className="fa-solid fa-phone text-2xl"></i>
               <div>
                 <p className="text-xs text-gray-500">CALL US NOW</p>
                 <p className="font-bold text-sm">+123 5678 890</p>
               </div>
             </div>
 
-            <i class="fa-solid fa-user text-2xl"></i>
-            <i class="fa-solid fa-heart text-2xl"></i>
+            <i className="fa-solid fa-user text-2xl"></i>
+            <i className="fa-solid fa-heart text-2xl"></i>
 
-            <Link to={`/wishlist`} className="relative">
-              <i class="fa-solid fa-bag-shopping text-2xl"></i>
-              {/* <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-                0
-              </span> */}
-            </Link>
+            <div className="relative cursor-pointer" onClick={() => navigate("/wishlist")}>
+              <i className="fa-solid fa-heart text-2xl" ></i>
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                {wishlist.length}
+              </span>
+            </div>
           </div>
         </div>
       </nav>
