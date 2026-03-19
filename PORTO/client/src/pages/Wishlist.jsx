@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { WishlistContext } from "../components/wishlist/WishlistContext.jsx";
+import { WishlistContext } from "../context/WishlistContext.jsx";
 import TopNavbar from "../components/TopNavbar.jsx";
 
 const Wishlist = () => {

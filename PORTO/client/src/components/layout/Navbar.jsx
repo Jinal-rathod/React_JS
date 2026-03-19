@@ -1,11 +1,13 @@
 import logo from "../../assets/logo_ecomblue_lg.png";
 import { useContext } from "react";
-import { WishlistContext } from "../../components/wishlist/WishlistContext.jsx";
+import { WishlistContext } from "../../context/WishlistContext.jsx";
+import { CartContext } from "../../context/CartContext.jsx";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
 
   const { wishlist } = useContext(WishlistContext);
+  const { cart } = useContext(CartContext);
   const navigate = useNavigate();
 
   return (
@@ -96,8 +98,15 @@ const Navbar = () => {
               </div>
             </div>
 
-            <i className="fa-solid fa-user text-2xl"></i>
-            <i className="fa-solid fa-heart text-2xl"></i>
+            <div onClick={() => navigate("/register")}>
+              <i className="fa-solid fa-user text-2xl"></i>
+            </div>
+            <div className="relative cursor-pointer" onClick={() => navigate("/cart")}>
+              <i className="fa-solid fa-cart-shopping text-2xl"></i>
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                {cart.length}
+              </span>
+            </div>
 
             <div className="relative cursor-pointer" onClick={() => navigate("/wishlist")}>
               <i className="fa-solid fa-heart text-2xl" ></i>
