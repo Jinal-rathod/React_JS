@@ -1,6 +1,16 @@
 import { Link } from 'react-router-dom';
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
+
+    const {
+        logout: auth0Logout,
+        user,
+    } = useAuth0();
+
+    const logout = () =>
+        auth0Logout({ logoutParams: { returnTo: window.location.origin } });
+
     return (
         <nav className="bg-neutral-primary w-full z-20 top-0 start-0 border-b border-default">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -9,7 +19,7 @@ const Navbar = () => {
                     className="flex items-center space-x-3 rtl:space-x-reverse"
                 >
                     <span className="self-center text-xl text-heading font-semibold whitespace-nowrap">
-                        Movie App
+                        {user.name}
                     </span>
                 </a>
                 <button
@@ -49,11 +59,11 @@ const Navbar = () => {
                         </li>
                         <li>
                             <Link to="/search">
-                                Serach
+                                Search
                             </Link>
                         </li>
                         <li>
-                            Sign In
+                            <button onClick={logout}>Logout</button>
                         </li>
                     </ul>
                 </div>
