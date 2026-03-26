@@ -1,23 +1,13 @@
-import { useState, useEffect } from "react";
-import { auth } from "./firebase/firebaseConfig";
-import { onAuthStateChanged } from "firebase/auth";
-import AuthPage from "./components/AuthPage";
-import Dashboard from "./components/Dashboard";
+import UserForm from './components/crud';
 import './App.css'
 
-function App() {
-  const [user, setUser] = useState(null);
+export default function App() {
 
-  useEffect(() => {
-    const unsub = onAuthStateChanged(auth, (u) => setUser(u));
-    return () => unsub();
-  }, []);
-
-  return user ? (
-    <Dashboard user={user} setUser={setUser} />
-  ) : (
-    <AuthPage setUser={setUser} />
+  return (
+    <div className="flex">
+      <div className="flex-1 bg-gray-100 min-h-screen">
+        <UserForm />
+      </div>
+    </div>
   );
 }
-
-export default App;
