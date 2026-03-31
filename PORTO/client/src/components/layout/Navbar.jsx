@@ -98,7 +98,7 @@ const Navbar = () => {
               </div>
             </div>
 
-            <div onClick={() => navigate("/register")}>
+            <div className="cursor-pointer" onClick={() => navigate("/login")}>
               <i className="fa-solid fa-user text-2xl"></i>
             </div>
             <div className="relative cursor-pointer" onClick={() => navigate("/cart")}>

@@ -1,4 +1,30 @@
+import { useState } from "react";
+
+const slides = [
+  {
+    id: 1,
+    image: "https://m2.portotheme.com/media/magefan_blog/shop1_post4_thumb.jpg",
+    title: "Fashion Trends",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non placerat mi. Etiam non... ",
+  },
+  {
+    id: 2,
+    image: "https://m2.portotheme.com/media/magefan_blog/shop4_post3_thumb.jpg",
+    title: "Post Format Video",
+    desc: "Leap into electronic typesetting, remaining essentially unchanged. It was popularised in... ",
+  },
+  {
+    id: 3,
+    image: "https://m2.portotheme.com/media/magefan_blog/shop4_post1_thumb.jpg",
+    title: "Post Format Standard",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non placerat mi. Etiam non... ",
+  },
+];
+
 const SidebarLeft = () => {
+
+  const [current, setCurrent] = useState(0);
+
   return (
     <div className="w-full lg:w-72 space-y-6">
 
@@ -78,31 +104,69 @@ const SidebarLeft = () => {
         <p className="text-sm text-gray-600 mt-4">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
+
+        {/* Buttons */}
+        <div className="flex mt-5">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrent(index)}
+              className={`w-[12px] h-[12px] rounded-full mx-1 border-2 ${current === index
+                ? "bg-blue-500 border-blue-500"
+                : "border-blue-500 hover:bg-blue-400"
+                }`}
+            ></button>
+          ))}
+        </div>
       </div>
 
       {/* Fashion Trends */}
-      <div className="flex flex-col text-left py-6">
-        <img
-          src="https://m2.portotheme.com/media/magefan_blog/shop1_post4_thumb.jpg"
-          alt=""
-          className="w-full rounded"
-        />
+      <div className="relative w-full overflow-hidden">
 
-        <h3 className="text-lg sm:text-xl font-bold mt-4">
-          Fashion Trends
-        </h3>
+        {slides.map((slide, index) => (
+          <div
+            key={slide.id}
+            className={`transition-all duration-500 ${index === current ? "block" : "hidden"
+              }`}
+          >
+            <div className="flex flex-col text-left py-6">
+              <img
+                src={slide.image}
+                alt=""
+                className="w-full rounded"
+              />
 
-        <p className="text-gray-400 mt-2 text-sm">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non
-          placerat mi. Etiam non...
-        </p>
+              <h3 className="text-lg sm:text-xl font-bold mt-4">
+                {slide.title}
+              </h3>
 
-        <a
-          href="#"
-          className="text-sm font-semibold mt-2 hover:text-blue-600"
-        >
-          read more &gt;
-        </a>
+              <p className="text-gray-400 mt-2 text-sm">
+                {slide.desc}
+              </p>
+
+              <a
+                href="#"
+                className="text-sm font-semibold mt-2 hover:text-blue-600"
+              >
+                read more &gt;
+              </a>
+            </div>
+          </div>
+        ))}
+
+        {/* Buttons */}
+        <div className="flex mt-2">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrent(index)}
+              className={`w-[12px] h-[12px] rounded-full mx-1 border-2 ${current === index
+                ? "bg-blue-500 border-blue-500"
+                : "border-blue-500 hover:bg-blue-400"
+                }`}
+            ></button>
+          ))}
+        </div>
       </div>
 
     </div>

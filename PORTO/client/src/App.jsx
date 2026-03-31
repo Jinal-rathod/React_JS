@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import Login from "./pages/Login.jsx";
@@ -10,8 +11,12 @@ import Checkout from "./pages/Checkout.jsx";
 import Register from "./pages/Register.jsx";
 import Categories from "./pages/Categories.jsx";
 import Wishlist from "./pages/Wishlist.jsx";
+import Forgot from "./pages/Forgot.jsx";
 
 function App() {
+
+  const [user, setUser] = useState(null);
+
   return (
     <>
       <Routes>
@@ -23,8 +28,9 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/register" element={<Register setUser={setUser} />} />
         <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/forgot" element={<Forgot />} />
       </Routes>
     </>
   );

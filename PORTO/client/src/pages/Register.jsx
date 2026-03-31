@@ -1,23 +1,73 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import TopNavbar from "../components/TopNavbar";
+import { auth } from "../firebase/firebaseConfig";
+import { createUserWithEmailAndPassword } from "firebase/auth"
+import { useNavigate } from "react-router-dom";
 
-export default function Register() {
+export default function Register({ setUser }) {
+
+  const navigate = useNavigate();
+
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const handleRegister = async (e) => {
+    e.preventDefault(); // ✅ prevent reload
+
+    if (!firstName || !lastName) {
+      return alert("Enter First Name & Last Name");
+    }
+
+    if (!email) {
+      return alert("Enter Email");
+    }
+
+    if (password.length < 6) {
+      return alert("Password must be at least 6 characters");
+    }
+
+    if (password !== confirmPassword) {
+      return alert("Passwords do not match ❌");
+    }
+
+    try {
+      const res = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      setUser(res.user);
+      alert("Registration Successful ✅");
+
+      navigate("/login"); // ✅ redirect
+
+    } catch (error) {
+      console.log("Error Code:", error.code);
+      console.log("Error Message:", error.message);
+
+      alert(error.message);
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <TopNavbar />
 
-      {/* Page Title */}
       <div className="bg-gray-100 py-12">
         <h1 className="text-3xl font-semibold text-center">
           Create New Customer Account
         </h1>
       </div>
 
-      {/* Form Section */}    
       <main className="flex-1 container mx-auto px-4 py-12">
-        <div className="bg-white p-10 rounded">
+        <form onSubmit={handleRegister} className="bg-white p-10 rounded">
           <div className="grid md:grid-cols-2 gap-12">
-            {/* Personal Information */}
+
+            {/* Personal Info */}
             <div>
               <h2 className="text-xl font-semibold mb-6">
                 Personal Information
@@ -25,42 +75,41 @@ export default function Register() {
 
               <div className="space-y-5">
                 <div>
-                  <label className="block text-sm mb-1 text-gray-500">
-                    First Name <span className="text-red-500">*</span>
-                  </label>
+                  <label>First Name *</label>
                   <input
-                    type="text"
-                    className="w-full border border-gray-300 px-4 py-2 rounded focus:ring-2 focus:ring-blue-500 outline-none"
+                    onChange={(e) => setFirstName(e.target.value)}
+                    className="w-full border px-4 py-2 rounded"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm mb-1 text-gray-500">
-                    Last Name <span className="text-red-500">*</span>
-                  </label>
+                  <label>Last Name *</label>
                   <input
-                    type="text"
-                    className="w-full border border-gray-300 px-4 py-2 rounded focus:ring-2 focus:ring-blue-500 outline-none"
+                    onChange={(e) => setLastName(e.target.value)}
+                    className="w-full border px-4 py-2 rounded"
                   />
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <input type="checkbox" />
-                  <label className="text-sm text-gray-600">
-                    Sign Up for Newsletter
-                  </label>
+                  <input
+                    type="checkbox"
+                    name="newsletter"
+                  // checked={form.newsletter}
+                  // onChange={handleChange}
+                  />
+                  <label>Sign Up for Newsletter</label>
                 </div>
               </div>
 
-              {/* Submit Button */}
-              <div className="mt-30">
-                <button className="bg-gray-900 w-full text-white px-10 py-3 rounded hover:bg-black transition">
-                  <Link to={`/login`}>REGISTER</Link>
-                </button>
-              </div>
+              <button
+                type="submit"
+                className="mt-10 bg-gray-900 w-full text-white py-3 rounded hover:bg-black"
+              >
+                REGISTER
+              </button>
             </div>
 
-            {/* Sign-in Information */}
+            {/* Sign-in Info */}
             <div>
               <h2 className="text-xl font-semibold mb-6">
                 Sign-in Information
@@ -68,41 +117,36 @@ export default function Register() {
 
               <div className="space-y-5">
                 <div>
-                  <label className="block text-sm mb-1 text-gray-500">
-                    Email <span className="text-red-500">*</span>
-                  </label>
+                  <label>Email *</label>
                   <input
                     type="email"
-                    className="w-full border border-gray-300 px-4 py-2 rounded focus:ring-2 focus:ring-blue-500 outline-none"
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full border px-4 py-2 rounded"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm mb-1 text-gray-500">
-                    Password <span className="text-red-500">*</span>
-                  </label>
+                  <label>Password *</label>
                   <input
                     type="password"
-                    className="w-full border border-gray-300 px-4 py-2 rounded focus:ring-2 focus:ring-blue-500 outline-none"
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="w-full border px-4 py-2 rounded"
                   />
-                  <p className="text-xs text-gray-400 mt-1">
-                    Password Strength: No Password
-                  </p>
                 </div>
 
                 <div>
-                  <label className="block text-sm mb-1 text-gray-500">
-                    Confirm Password <span className="text-red-500">*</span>
-                  </label>
+                  <label>Confirm Password *</label>
                   <input
                     type="password"
-                    className="w-full border border-gray-300 px-4 py-2 rounded focus:ring-2 focus:ring-blue-500 outline-none"
+                    name="confirmPassword"
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    className="w-full border px-4 py-2 rounded"
                   />
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </form>
       </main>
     </div>
   );
