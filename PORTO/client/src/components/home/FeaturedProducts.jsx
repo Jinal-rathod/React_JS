@@ -9,7 +9,7 @@ const FeaturedProducts = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/products")
+    axios.get("http://localhost:4000/products")
       .then(res => {
         setProducts(res.data)
       })

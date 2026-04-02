@@ -21,9 +21,31 @@ const slides = [
   },
 ];
 
+const testimonial = [
+  {
+    id: 1,
+    image: "https://m2.portotheme.com/media/wysiwyg/smartwave/porto/homepage/01/shop2_about_us_person1.jpg",
+    name: "John Smith",
+    post: "CEO & Founder",
+  },
+  {
+    id: 2,
+    image: "https://m2.portotheme.com/media/wysiwyg/smartwave/porto/homepage/01/client-2.jpg",
+    name: "Lussy Smith",
+    post: "CEO & Founder",
+  },
+  {
+    id: 3,
+    image: "https://m2.portotheme.com/media/wysiwyg/smartwave/porto/homepage/01/shop1_testimonial1.jpg",
+    name: "holly Smith",
+    post: "CEO & Founder",
+  },
+];
+
 const SidebarLeft = () => {
 
   const [current, setCurrent] = useState(0);
+  const [testCurrent, settestCurrent] = useState(0);
 
   return (
     <div className="w-full lg:w-72 space-y-6">
@@ -84,39 +106,48 @@ const SidebarLeft = () => {
 
       {/* TESTIMONIAL */}
       <div className="bg-white p-5 sm:p-6 py-8 shadow rounded border-2 border-blue-500">
-        <div className="flex items-center gap-3">
-          <img
-            src="https://randomuser.me/api/portraits/men/32.jpg"
-            alt=""
-            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full"
-          />
 
-          <div>
-            <h4 className="font-semibold text-sm sm:text-base">
-              John Smith
-            </h4>
-            <p className="text-xs sm:text-sm text-gray-500">
-              CEO & Founder
-            </p>
-          </div>
-        </div>
+        {
+          testimonial.map((test, index) => (
+            <div key={test.id}>
+              <div className={`flex items-center gap-3 ${index === testCurrent ? "block" : "hidden"}`}>
+                <img
+                  src={test.img}
+                  alt=""
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full"
+                />
+
+                <div>
+                  <h4 className="font-semibold text-sm sm:text-base">
+                    {test.name}
+                  </h4>
+                  <p className="text-xs sm:text-sm text-gray-500">
+                    {test.post}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))
+        }
 
         <p className="text-sm text-gray-600 mt-4">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
 
         {/* Buttons */}
-        <div className="flex mt-5">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrent(index)}
-              className={`w-[12px] h-[12px] rounded-full mx-1 border-2 ${current === index
-                ? "bg-blue-500 border-blue-500"
-                : "border-blue-500 hover:bg-blue-400"
-                }`}
-            ></button>
-          ))}
+        <div div className="flex mt-5" >
+          {
+            testimonial.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => settestCurrent(index)}
+                className={`w-[12px] h-[12px] rounded-full mx-1 border-2 ${testCurrent === index
+                  ? "bg-blue-500 border-blue-500"
+                  : "border-blue-500 hover:bg-blue-400"
+                  }`}
+              ></button>
+            ))
+          }
         </div>
       </div>
 
@@ -169,7 +200,7 @@ const SidebarLeft = () => {
         </div>
       </div>
 
-    </div>
+    </div >
   );
 };
 
