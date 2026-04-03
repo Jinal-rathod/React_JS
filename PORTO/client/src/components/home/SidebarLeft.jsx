@@ -23,19 +23,19 @@ const slides = [
 
 const testimonial = [
   {
-    id: 1,
+    id: 11,
     image: "https://m2.portotheme.com/media/wysiwyg/smartwave/porto/homepage/01/shop2_about_us_person1.jpg",
     name: "John Smith",
     post: "CEO & Founder",
   },
   {
-    id: 2,
+    id: 12,
     image: "https://m2.portotheme.com/media/wysiwyg/smartwave/porto/homepage/01/client-2.jpg",
     name: "Lussy Smith",
     post: "CEO & Founder",
   },
   {
-    id: 3,
+    id: 13,
     image: "https://m2.portotheme.com/media/wysiwyg/smartwave/porto/homepage/01/shop1_testimonial1.jpg",
     name: "holly Smith",
     post: "CEO & Founder",
@@ -112,7 +112,7 @@ const SidebarLeft = () => {
             <div key={test.id}>
               <div className={`flex items-center gap-3 ${index === testCurrent ? "block" : "hidden"}`}>
                 <img
-                  src={test.img}
+                  src={test.image}
                   alt=""
                   className="w-10 h-10 sm:w-12 sm:h-12 rounded-full"
                 />
@@ -135,7 +135,7 @@ const SidebarLeft = () => {
         </p>
 
         {/* Buttons */}
-        <div div className="flex mt-5" >
+        <div className="flex mt-5" >
           {
             testimonial.map((_, index) => (
               <button

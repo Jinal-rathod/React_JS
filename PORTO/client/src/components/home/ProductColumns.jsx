@@ -6,9 +6,9 @@ const ProductColumns = () => {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
-    axios.get("http://localhost:4000/products")
+    axios.get("http://localhost:4000/api/products")
       .then(res => {
-        setProducts(res.data)
+        setProducts(res.data.products)
       })
       .catch(err => {
         console.log(err)
@@ -20,7 +20,7 @@ const ProductColumns = () => {
       <div>
         <h3 className="font-bold mb-4">TOP RATED PRODUCTS</h3>
         <div className="space-y-4">
-          {products.slice(0, 3).map((p, i) => (
+          { Array.isArray(products) && products.slice(0, 3).map((p, i) => (
             <ProductSmallCard key={i} product={p} />
           ))}
         </div>
@@ -29,7 +29,7 @@ const ProductColumns = () => {
       <div>
         <h3 className="font-bold mb-4">BEST SELLING PRODUCTS</h3>
         <div className="space-y-4">
-          {products.slice(1, 4).map((p, i) => (
+          {Array.isArray(products) && products.slice(1, 4).map((p, i) => (
             <ProductSmallCard key={i} product={p} />
           ))}
         </div>
@@ -38,7 +38,7 @@ const ProductColumns = () => {
       <div>
         <h3 className="font-bold mb-4">LATEST PRODUCTS</h3>
         <div className="space-y-4">
-          {products.slice(0, 3).map((p, i) => (
+          {Array.isArray(products) && products.slice(0, 3).map((p, i) => (
             <ProductSmallCard key={i} product={p} />
           ))}
         </div>

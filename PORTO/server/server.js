@@ -16,13 +16,15 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use("/api/product", productRoutes);
-app.use("/api/categorie", categoryRoutes);
+app.use("/api/products", productRoutes);
+// app.use("/api/categorie", categoryRoutes);
+app.use("/api/categories", categoryRoutes);
 
 // DB connectionw
 mongoose
   .connect(
     "mongodb+srv://jinalrathod594_db_user:jinal_594@cluster1.dei5gdk.mongodb.net/?appName=Cluster1",
+    // "mongodb+srv://jinalrathod594_db_user:jinal_594@cluster1.dei5gdk.mongodb.net/test?retryWrites=true&w=majority",
   )
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log("MongoDB Connection Failed", err));

@@ -8,15 +8,32 @@ const FeaturedProducts = () => {
 
   const [products, setProducts] = useState([]);
 
+  // useEffect(() => {
+  //   axios.get("http://localhost:4000/api/products")
+  //     .then(res => {
+  //       setProducts(res.data)
+  //     })
+  //     .catch(err => {
+  //       console.log(err)
+  //     })
+  // }, [])
+
   useEffect(() => {
-    axios.get("http://localhost:4000/products")
+    axios.get("http://localhost:4000/api/products")
       .then(res => {
-        setProducts(res.data)
+        console.log(res.data);
+
+        setProducts(
+          Array.isArray(res.data)
+            ? res.data
+            : res.data.products || []
+        );
       })
       .catch(err => {
-        console.log(err)
-      })
-  }, [])
+        console.log(err);
+        setProducts([]);
+      });
+  }, []);
 
   const { toggleWishlist, isInWishlist } = useContext(WishlistContext);
   const { toggleCart, isInCart } = useContext(CartContext);
@@ -29,9 +46,9 @@ const FeaturedProducts = () => {
       <h2 className="text-lg font-bold mb-6">FEATURED PRODUCTS</h2>
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        {products.map((product, index) => (
+        {Array.isArray(products) && products.map((product) => (
           <div
-            key={index}
+            key={product._id}
             className="group bg-white pb-4 rounded-lg overflow-hidden "
           >
             {/* Image Container */}
@@ -47,7 +64,7 @@ const FeaturedProducts = () => {
 
                 {/* Cart Icon */}
                 <div className="absolute top-0 right-0 p-2">
-                  <i className={`text-lg cursor-pointer mx-1 ${isInCart(product.id)
+                  <i className={`text-lg cursor-pointer mx-1 ${isInCart(product._id)
                     ? "fa-solid fa-bag-shopping text-blue-500"
                     : "fa-solid fa-bag-shopping"}
                   `} onClick={() => toggleCart(product)}></i>
@@ -66,7 +83,7 @@ const FeaturedProducts = () => {
               <h3 className="text-gray-700 flex justify-between items-center mt-2">
                 {product.name}
                 <i
-                  className={`cursor-pointer text-lg ${isInWishlist(product.id)
+                  className={`cursor-pointer text-lg ${isInWishlist(product._id)
                     ? "fa-solid text-red-500"
                     : "fa-regular"
                     } fa-heart`}

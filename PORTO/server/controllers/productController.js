@@ -1,9 +1,23 @@
 const Product = require("../models/Product");
 
 // get all products
+// exports.getProducts = async (req, res) => {
+//   try {
+//     const data = await Product.find();
+//     // res.json(data[0].products); // 👈 extract array
+//     res.json(products);
+//   } catch (error) {
+//     res.status(500).json({ message: error.message });
+//   }
+// };
+
 exports.getProducts = async (req, res) => {
-  const products = await Product.find();
-  res.json(products);
+  try {
+    const products = await Product.find();
+    res.json(products);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 };
 
 // featured
